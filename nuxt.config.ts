@@ -20,8 +20,8 @@ export default defineNuxtConfig({
     // apiKey: '' // Default to an empty string, automatically set at runtime using process.env.NUXT_API_KEY
     public: {
       siteUrl: process.env.SITE_URL,
-      siteName: 'AKKRUE',
-      siteDescription: 'Wir bieten Schule und Sport unter einem Dach. Mit allen Trainingsmöglichkeiten auf dem Campus.',
+      siteName: 'Carina Karmann',
+      siteDescription: 'Fitness / Ernährung / Bewusstsein - Ich bringe dich in deine Kraft',
       titleSeparator: '·',
     }
   },
