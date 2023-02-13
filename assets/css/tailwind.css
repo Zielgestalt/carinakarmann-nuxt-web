@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* @font-face {
+      font-family: "HalvarMittelschrift-Regular";
+      src: local(''),
+        url('../fonts/Halvar-Mittelschrift-Regular.woff2') format('woff2'),
+        url('../fonts/Halvar-Mittelschrift-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "HalvarStencilEngschriftMingap-Bold";
+      src: local(''),
+        url('../fonts/Halvar-Stencil-Engschrift-Bold-MinGap.woff2') format('woff2'),
+        url('../fonts/Halvar-Stencil-Engschrift-Bold-MinGap.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    } */
+
+
+
+    /* lato-300 - latin */
+    @font-face {
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url("../fonts/lato-v16-latin-300.eot"); /* IE9 Compat Modes */
+      src: local("Lato Light"), local("Lato-Light"),
+        url("../fonts/lato-v16-latin-300.eot?#iefix")
+          format("embedded-opentype"),
+        /* IE6-IE8 */ url("../fonts/lato-v16-latin-300.woff2") format("woff2"),
+        /* Super Modern Browsers */ url("../fonts/lato-v16-latin-300.woff")
+          format("woff"),
+        /* Modern Browsers */ url("../fonts/lato-v16-latin-300.ttf")
+          format("truetype"),
+        /* Safari, Android, iOS */ url("../fonts/lato-v16-latin-300.svg#Lato")
+          format("svg"); /* Legacy iOS */
+    }
+
+    /* lato-700 - latin */
+    @font-face {
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local("Lato Bold"), local("Lato-Bold"),
+        url("../fonts/lato-v16-latin-700.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("../fonts/lato-v16-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* Metropolis-700 - latin */
+    @font-face {
+      font-family: "Metropolis";
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+      src: url("../fonts/Metropolis-Regular.woff2") format("woff2"),
+        url("../fonts/Metropolis-Regular.woff") format("woff");
+    }
+
+    /* Metropolis-700 - latin */
+    @font-face {
+      font-family: "Metropolis";
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+      src: url("../fonts/Metropolis-Bold.woff2") format("woff2"),
+        url("../fonts/Metropolis-Bold.woff") format("woff");
+    }
+
+    /* caveat-regular - latin */
+    @font-face {
+      font-family: 'Thankfully';
+      font-style: normal;
+      font-weight: 400;
+      src: url('../fonts/Thankfully.eot'); /* IE9 Compat Modes */
+      src: local(''),
+          url('../fonts/Thankfully.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('../fonts/Thankfully.woff2') format('woff2'), /* Super Modern Browsers */
+          url('../fonts/Thankfully.woff') format('woff'), /* Modern Browsers */
+          url('../fonts/Thankfully.ttf') format('truetype'), /* Safari, Android, iOS */
+          url('../fonts/Thankfully.svg#Caveat') format('svg'); /* Legacy iOS */
+    }
+  }
+
+  :where(section):not(.carousel) {
+
+    @apply py-8 lg:py-16 relative max-w-full z-10;
+
+    &.skew {
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(-5vh + 1px);
+        left: 0;
+        width: 100%;
+        height: 5vh;
+        background: inherit;
+
+
+        clip-path: polygon(
+          0 calc(0% + 5vh),
+          100% 0,
+          100% 100%,
+          0 100%
+        );
+      }
+
+    }
+  }
+
+  :where(footer) {
+    .footer-menu {
+      h4 {
+        @apply text-3xl font-display uppercase mb-4
+      }
+
+      li {
+        a {
+          @apply py-1 block
+        }
+        
+      }
+    }
+  }
+}
+
+@layer components {
+  :where(.caption) {
+    @apply max-w-full px-8 py-4 -mt-4 relative text-sm leading-none before:bg-primary before:w-full before:absolute before:h-full before:top-0 before:left-0 before:opacity-80 before:-skew-y-2;
+
+    > * {
+      @apply relative;
+    }
+  }
+
+  :where(.card) {
+    @apply border border-gray-50 p-8 rounded-lg;
+  }
+
+  [data-invalid='true']:not([data-type='repeater']) input {
+    @apply border-danger-500
+  }
+}
+
+
