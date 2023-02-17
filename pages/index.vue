@@ -1,4 +1,9 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+useSeoMeta({
+  ogImage: config.public.siteUrl + '/og-image.jpg'
+})
+
 const { gsap, ScrollTrigger } = useGsap();
 
 const main = ref();

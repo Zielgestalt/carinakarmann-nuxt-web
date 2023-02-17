@@ -23,6 +23,7 @@ export default defineNuxtConfig({
       siteName: 'Carina Karmann - Personal Coach',
       siteDescription: 'Fitness / Ernährung / Bewusstsein - Ich bringe dich in deine Kraft. Schluss mit einem zwickendem Körper, Energielosigkeit und ewigen Diäten! Ich zeig dir, wie du dich endlich dauerhaft in deinem Körper wohlfühlst!',
       titleSeparator: '·',
+      language: 'de-DE',
     }
   },
 
