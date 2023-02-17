@@ -18,10 +18,9 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      display: ['"Thankfully"', 'sans-serif'],
-      headline: ['"Metropolis"', 'sans-serif'],
-      body: ['"Lato"', 'sans-serif'],
-      sans: ['"Lato"', 'sans-serif']
+      display: ['"Dancing Script"', 'sans-serif'],
+      body: ['"Open Sans"', 'sans-serif'],
+      sans: ['"Open Sans"', 'sans-serif']
       // 'sans': ['"Source Sans Pro"', "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"]
     },
     // fontSize: {
@@ -142,27 +141,27 @@ module.exports = {
         xl: {
           css: {
             lineHeight: '1.25',
-            h1: {
-              fontSize: theme('fontSize.h1'),
-              lineHeight: '0.875',
-              fontFamily: theme('fontFamily.display').join(', '),
-            },
-            h2: {
-              fontSize: theme('fontSize.h2'),
-              lineHeight: '1',
-              fontFamily: theme('fontFamily.display').join(', '),
-            },
-            h3: {
-              fontSize: theme('fontSize.h3'),
-              lineHeight: '1',
-              fontFamily: theme('fontFamily.body').join(', '),
-            },
-            h4: {
-              fontSize: theme('fontSize.h4'),
-              lineHeight: '1',
-              fontFamily: theme('fontFamily.body').join(', '),
-              textTransform: 'uppercase'
-            }
+            // h1: {
+            //   fontSize: theme('fontSize.h1'),
+            //   lineHeight: '0.875',
+            //   fontFamily: theme('fontFamily.headline').join(', '),
+            // },
+            // h2: {
+            //   fontSize: theme('fontSize.h2'),
+            //   lineHeight: '1',
+            //   fontFamily: theme('fontFamily.display').join(', '),
+            // },
+            // h3: {
+            //   fontSize: theme('fontSize.h3'),
+            //   lineHeight: '1',
+            //   fontFamily: theme('fontFamily.body').join(', '),
+            // },
+            // h4: {
+            //   fontSize: theme('fontSize.h4'),
+            //   lineHeight: '1',
+            //   fontFamily: theme('fontFamily.body').join(', '),
+            //   textTransform: 'uppercase'
+            // }
           }
         }
       })
@@ -180,14 +179,17 @@ module.exports = {
       addComponents({
         // Buttons
         '.btn': {
+          position: 'relative',
           border: '1px solid currentColor',
-          padding: '.5rem 1rem',
+          padding: '1.25rem 1.5rem',
           borderRadius: '9999px',
-          fontWeight: '600',
+          fontWeight: '300',
           textAlign: 'center',
           display: 'inline-block',
+          letterSpacing: '0.1em',
           // fontFamily: config('theme.fontFamily.display').join(', '),
           textTransform: 'uppercase',
+          textDecoration: 'none',
           cursor: 'pointer',
           transition: 'background-color .25s, border-color .25s, color .25s',
           '&:disabled': {
@@ -195,12 +197,12 @@ module.exports = {
             cursor: 'not-allowed'
           },
           '&.btn-small': {
-            padding: '.25rem .5rem',
+            padding: '.75rem 1rem',
             fontSize: '0.875em'
           },
           '&.btn-large': {
             fontSize: '1.25em'
-          }
+          },
         },
         '.btn-primary': {
           backgroundColor: config('theme.colors.primary.DEFAULT'),
@@ -215,6 +217,26 @@ module.exports = {
             borderColor: config('theme.colors.primary.hover'),
             backgroundColor: config('theme.colors.primary.hover'),
             color: config('theme.colors.primary.inverse')
+          },
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            width: '50%',
+            height: '2rem',
+            borderRadius: '100%',
+            backgroundColor: config('theme.colors.primary.DEFAULT'),
+            top: '-12px',
+            right: '8%'
+          },
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            width: '50%',
+            height: '2rem',
+            borderRadius: '100%',
+            backgroundColor: config('theme.colors.primary.DEFAULT'),
+            bottom: '-12px',
+            left: '8%'
           }
         },
         '.btn-secondary': {

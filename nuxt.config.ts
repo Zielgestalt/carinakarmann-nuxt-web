@@ -20,8 +20,8 @@ export default defineNuxtConfig({
     // apiKey: '' // Default to an empty string, automatically set at runtime using process.env.NUXT_API_KEY
     public: {
       siteUrl: process.env.SITE_URL,
-      siteName: 'Carina Karmann',
-      siteDescription: 'Fitness / Ernährung / Bewusstsein - Ich bringe dich in deine Kraft',
+      siteName: 'Carina Karmann - Personal Coach',
+      siteDescription: 'Fitness / Ernährung / Bewusstsein - Ich bringe dich in deine Kraft. Schluss mit einem zwickendem Körper, Energielosigkeit und ewigen Diäten! Ich zeig dir, wie du dich endlich dauerhaft in deinem Körper wohlfühlst!',
       titleSeparator: '·',
     }
   },
@@ -59,5 +59,9 @@ export default defineNuxtConfig({
         resolve('./formkit.config.{js,mjs,ts}')
       ]
     }
+  },
+
+  build: {
+    transpile: ['gsap'],
   },
 })

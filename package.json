@@ -8,14 +8,17 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.1.2",
     "@nuxt/image-edge": "1.0.0-27919678.2f5b64b",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/fontaine": "^0.2.4",
     "@nuxtjs/tailwindcss": "^6.3.1",
     "@tailwindcss/typography": "^0.5.9",
+    "nuxt": "^3.1.2",
     "nuxt-icon": "^0.2.10",
     "nuxt-seo-kit": "^1.2.2",
     "tailwindcss-dark-mode": "^1.1.7"
+  },
+  "dependencies": {
+    "gsap": "^3.11.4"
   }
 }
